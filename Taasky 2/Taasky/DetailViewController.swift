@@ -13,6 +13,8 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var backgroundImageView: UIImageView!
   
   var hamburgerView: HamburgerView?
+    
+    var currentVC: UIViewController?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,6 +38,23 @@ class DetailViewController: UIViewController {
       if let newMenuItem = menuItem {
         view.backgroundColor = UIColor(colorArray: newMenuItem["colors"] as! NSArray)
         backgroundImageView?.image = UIImage(named: newMenuItem["bigImage"] as! String)
+        
+        ///
+        currentVC?.uninstallFromParent()
+        
+        let type: NSInteger? = newMenuItem["type"]?.integerValue
+        if let type_ = type {
+            switch(type_) {
+            case 0:
+    
+                currentVC = UIStoryboard.mainBoard().studentsVC()
+                self.installChildVC(currentVC, containerView: self.view)
+                
+            default:
+                
+                println("unkown type")
+            }
+        }
       }
     }
   }
