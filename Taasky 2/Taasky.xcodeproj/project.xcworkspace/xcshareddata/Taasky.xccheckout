@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F75ED14C-D57E-4B4F-B254-4FAA44292BFD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Taasky</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2D2E35D59AA70B002521B70A1B2B6BE69524B9AD</key>
+		<string>https://github.com/dymx101/95912_app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Taasky 2/Taasky.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2D2E35D59AA70B002521B70A1B2B6BE69524B9AD</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dymx101/95912_app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2D2E35D59AA70B002521B70A1B2B6BE69524B9AD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2D2E35D59AA70B002521B70A1B2B6BE69524B9AD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>95912_app</string>
+		</dict>
+	</array>
+</dict>
+</plist>

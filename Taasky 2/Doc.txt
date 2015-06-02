@@ -1,1 +1,18 @@
 https://leancloud.cn
+
+
+<data model>
+
+student
+===============
+classId
+roomId
+name
+company
+address
+postcode
+mobile
+email
+qq
+avatar_small
+avatar_large
