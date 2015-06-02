@@ -27,6 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let students = PMStudent.getAllStudents()
     if (students.count == 0) {
         
+        initStudents()
+        
+    } else {
+        print(students)
+    }
+    
+    return true
+  }
+    
+    // Caution: this method will override whatever data currently saved
+    func initStudents() {
         var newStudents: [PMStudent] = []
         
         newStudents.append(PMStudent.createStudent("朱建玲", studentID: 1))
@@ -66,17 +77,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         newStudents.append(PMStudent.createStudent("董魁", studentID: 32))
         newStudents.append(PMStudent.createStudent("王丽", studentID: 33))
         newStudents.append(PMStudent.createStudent("李海京", studentID: 34))
-
+        
         for student in newStudents {
             student.save()
         }
-        
-    } else {
-        print(students)
     }
-    
-    return true
-  }
   
   func applicationWillResignActive(application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
