@@ -21,6 +21,7 @@
 		40C05A081AB8F9BB005CB016 /* MenuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40C05A071AB8F9BB005CB016 /* MenuItems.plist */; };
 		A4E1B66273A80C8D30D23A6D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B1141E778ADCA6F398CA /* libPods.a */; };
 		EAFCCB391B1A48220016ED62 /* Doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = EAFCCB381B1A48220016ED62 /* Doc.txt */; };
+		F2F5861E1B1DAB7C0069B248 /* PMStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		E216B1141E778ADCA6F398CA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFCCB381B1A48220016ED62 /* Doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Doc.txt; sourceTree = "<group>"; };
 		F2F586191B1DA7320069B248 /* Taasky-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Taasky-Bridging-Header.h"; sourceTree = "<group>"; };
+		F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudent.swift; sourceTree = "<group>"; };
 		FB71E71605409897FA1361B1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				40C059E81AB8F7AE005CB016 /* LaunchScreen.xib */,
 				40C059DD1AB8F7AE005CB016 /* Supporting Files */,
 				F2F586191B1DA7320069B248 /* Taasky-Bridging-Header.h */,
+				F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */,
 			);
 			path = Taasky;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				40C05A041AB8F831005CB016 /* MenuItemCell.swift in Sources */,
 				409186AD1ABD6C0E00F43977 /* HamburgerView.swift in Sources */,
 				40A904D61AB91FC900D0A33C /* ContainerViewController.swift in Sources */,
+				F2F5861E1B1DAB7C0069B248 /* PMStudent.swift in Sources */,
 				40C05A021AB8F817005CB016 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

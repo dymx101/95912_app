@@ -19,13 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     AVOSCloud.setApplicationId("pg1lj49lhnhv6p13h83a5cx3n23y1r2779umy3ul69flymj5", clientKey: "yh4rkt4hb3s2umq1jbnipk3w9f35u3zq09hauwcst80njn85")
     
-//    AVObject *testObject = [AVObject objectWithClassName:@"TestObject"];
-//    [testObject setObject:@"bar" forKey:@"foo"];
-//    [testObject save];
     
-    let testObject = AVObject(className: "TestObject")
-    testObject.setObject("bar", forKey: "foo")
-    testObject.save()
+//    let testObject = AVObject(className: "TestObject")
+//    testObject.setObject("bar", forKey: "foo")
+//    testObject.save()
+    
+    let students = PMStudent.getAllStudents()
+    if (students.count == 0) {
+        let student = PMStudent.createStudent("董一鸣", studentID: 24)
+        student.qq = "2757273"
+        student.roomID = 109
+        student.save()
+    } else {
+        print(students)
+    }
     
     return true
   }
