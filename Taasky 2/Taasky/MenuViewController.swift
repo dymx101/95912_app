@@ -12,7 +12,18 @@ class MenuViewController: UITableViewController {
   
   lazy var menuItems: NSArray = {
     let path = NSBundle.mainBundle().pathForResource("MenuItems", ofType: "plist")
-    return NSArray(contentsOfFile: path!)!
+    
+    let arr = NSArray(contentsOfFile: path!)!
+    
+    var arrayInUse = arr.subarrayWithRange(NSMakeRange(0, 3))
+    
+//    for item in arrayInUse {
+//        if let item_ = item as? NSMutableDictionary {
+//            item_.setValue(arrayInUse.indexOfObject(item_), forKey: "key")
+//        }
+//    }
+    
+    return arrayInUse
   }()
   
   override func viewDidLoad() {

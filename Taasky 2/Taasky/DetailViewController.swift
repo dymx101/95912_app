@@ -37,7 +37,8 @@ class DetailViewController: UIViewController {
     didSet {
       if let newMenuItem = menuItem {
         view.backgroundColor = UIColor(colorArray: newMenuItem["colors"] as! NSArray)
-        backgroundImageView?.image = UIImage(named: newMenuItem["bigImage"] as! String)
+//        backgroundImageView?.image = UIImage(named: newMenuItem["bigImage"] as! String)
+        backgroundImageView?.image = nil
         
         ///
         currentVC?.uninstallFromParent()

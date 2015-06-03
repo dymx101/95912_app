@@ -4,11 +4,25 @@
 <array>
 	<dict>
 		<key>image</key>
+		<string>Raining</string>
+		<key>bigImage</key>
+		<string>RainingBig</string>
+		<key>type</key>
+		<integer>0</integer>
+		<key>colors</key>
+		<array>
+			<integer>14</integer>
+			<integer>88</integer>
+			<integer>149</integer>
+		</array>
+	</dict>
+	<dict>
+		<key>image</key>
 		<string>Smile</string>
 		<key>bigImage</key>
 		<string>SmileBig</string>
 		<key>type</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>colors</key>
 		<array>
 			<integer>249</integer>
@@ -22,7 +36,7 @@
 		<key>bigImage</key>
 		<string>CoffeeBig</string>
 		<key>type</key>
-		<integer>1</integer>
+		<integer>2</integer>
 		<key>colors</key>
 		<array>
 			<integer>69</integer>
@@ -36,7 +50,7 @@
 		<key>bigImage</key>
 		<string>DrinksBig</string>
 		<key>type</key>
-		<integer>2</integer>
+		<integer>3</integer>
 		<key>colors</key>
 		<array>
 			<integer>249</integer>
@@ -50,7 +64,7 @@
 		<key>bigImage</key>
 		<string>ThumbsUpBig</string>
 		<key>type</key>
-		<integer>3</integer>
+		<integer>4</integer>
 		<key>colors</key>
 		<array>
 			<integer>32</integer>
@@ -64,26 +78,12 @@
 		<key>bigImage</key>
 		<string>ThumbsDownBig</string>
 		<key>type</key>
-		<integer>4</integer>
+		<integer>5</integer>
 		<key>colors</key>
 		<array>
 			<integer>207</integer>
 			<integer>34</integer>
 			<integer>156</integer>
-		</array>
-	</dict>
-	<dict>
-		<key>image</key>
-		<string>Raining</string>
-		<key>bigImage</key>
-		<string>RainingBig</string>
-		<key>type</key>
-		<integer>5</integer>
-		<key>colors</key>
-		<array>
-			<integer>14</integer>
-			<integer>88</integer>
-			<integer>149</integer>
 		</array>
 	</dict>
 	<dict>

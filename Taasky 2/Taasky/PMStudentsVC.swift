@@ -9,27 +9,41 @@
 import UIKit
 
 class PMStudentsVC: UIViewController {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var numberPerRow: Int = 3
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let collectionWidth = CGRectGetWidth(collectionView.bounds)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let insets = layout.sectionInset.left + layout.sectionInset.right
+        let spacing = layout.minimumLineSpacing * CGFloat(numberPerRow + 1)
+        let width = (collectionWidth - insets - spacing) / CGFloat(numberPerRow)
+        layout.itemSize = CGSizeMake(width, 128)
     }
-    */
 
+}
+
+extension PMStudentsVC:UICollectionViewDataSource {
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 34
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PMStudentCollectCell", forIndexPath: indexPath) as! PMStudentCollectCell
+        
+        
+        
+        return cell
+    }
 }

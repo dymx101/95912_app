@@ -24,6 +24,7 @@
 		EA536AF11B1DF68600546482 /* PMStudentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA536AF01B1DF68600546482 /* PMStudentsVC.swift */; };
 		EA536AF31B1DF94A00546482 /* UIStoryboard+MathMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */; };
 		EAFCCB391B1A48220016ED62 /* Doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = EAFCCB381B1A48220016ED62 /* Doc.txt */; };
+		F2D263EB1B1ED86F0031031B /* PMStudentCollectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D263EA1B1ED86F0031031B /* PMStudentCollectCell.swift */; };
 		F2F5861E1B1DAB7C0069B248 /* PMStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		EA536AF01B1DF68600546482 /* PMStudentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudentsVC.swift; sourceTree = "<group>"; };
 		EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+MathMatch.swift"; sourceTree = "<group>"; };
 		EAFCCB381B1A48220016ED62 /* Doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Doc.txt; sourceTree = "<group>"; };
+		F2D263EA1B1ED86F0031031B /* PMStudentCollectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudentCollectCell.swift; sourceTree = "<group>"; };
 		F2F586191B1DA7320069B248 /* Taasky-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Taasky-Bridging-Header.h"; sourceTree = "<group>"; };
 		F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudent.swift; sourceTree = "<group>"; };
 		FB71E71605409897FA1361B1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,11 +127,10 @@
 		40C059DC1AB8F7AE005CB016 /* Taasky */ = {
 			isa = PBXGroup;
 			children = (
+				F2D263E91B1ED8380031031B /* Views */,
+				F2D263E81B1ED7AB0031031B /* ViewControllers */,
 				EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */,
 				40C059DF1AB8F7AE005CB016 /* AppDelegate.swift */,
-				40A904D51AB91FC900D0A33C /* ContainerViewController.swift */,
-				40C059FF1AB8F7F9005CB016 /* MenuViewController.swift */,
-				40C05A011AB8F817005CB016 /* DetailViewController.swift */,
 				40C059E31AB8F7AE005CB016 /* Main.storyboard */,
 				409186AC1ABD6C0E00F43977 /* HamburgerView.swift */,
 				40C05A031AB8F831005CB016 /* MenuItemCell.swift */,
@@ -141,7 +142,6 @@
 				F2F586191B1DA7320069B248 /* Taasky-Bridging-Header.h */,
 				F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */,
 				EA536AEE1B1DF4A100546482 /* defines.swift */,
-				EA536AF01B1DF68600546482 /* PMStudentsVC.swift */,
 			);
 			path = Taasky;
 			sourceTree = "<group>";
@@ -169,6 +169,25 @@
 				40C059F41AB8F7AE005CB016 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F2D263E81B1ED7AB0031031B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA536AF01B1DF68600546482 /* PMStudentsVC.swift */,
+				40A904D51AB91FC900D0A33C /* ContainerViewController.swift */,
+				40C059FF1AB8F7F9005CB016 /* MenuViewController.swift */,
+				40C05A011AB8F817005CB016 /* DetailViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F2D263E91B1ED8380031031B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2D263EA1B1ED86F0031031B /* PMStudentCollectCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +334,7 @@
 				40C059E01AB8F7AE005CB016 /* AppDelegate.swift in Sources */,
 				40C05A041AB8F831005CB016 /* MenuItemCell.swift in Sources */,
 				409186AD1ABD6C0E00F43977 /* HamburgerView.swift in Sources */,
+				F2D263EB1B1ED86F0031031B /* PMStudentCollectCell.swift in Sources */,
 				40A904D61AB91FC900D0A33C /* ContainerViewController.swift in Sources */,
 				F2F5861E1B1DAB7C0069B248 /* PMStudent.swift in Sources */,
 				EA536AEF1B1DF4A100546482 /* defines.swift in Sources */,
