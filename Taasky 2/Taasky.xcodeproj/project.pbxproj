@@ -127,6 +127,7 @@
 		40C059DC1AB8F7AE005CB016 /* Taasky */ = {
 			isa = PBXGroup;
 			children = (
+				F2D263EC1B1F0E890031031B /* Model */,
 				F2D263E91B1ED8380031031B /* Views */,
 				F2D263E81B1ED7AB0031031B /* ViewControllers */,
 				EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */,
@@ -140,7 +141,6 @@
 				40C059E81AB8F7AE005CB016 /* LaunchScreen.xib */,
 				40C059DD1AB8F7AE005CB016 /* Supporting Files */,
 				F2F586191B1DA7320069B248 /* Taasky-Bridging-Header.h */,
-				F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */,
 				EA536AEE1B1DF4A100546482 /* defines.swift */,
 			);
 			path = Taasky;
@@ -188,6 +188,14 @@
 				F2D263EA1B1ED86F0031031B /* PMStudentCollectCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		F2D263EC1B1F0E890031031B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

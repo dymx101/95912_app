@@ -96,18 +96,24 @@ class PMStudent: AVObject {
         return student
     }
     
+    static func createStudent(object: AVObject) -> PMStudent {
+        let student = PMStudent(className: "PMStudent")
+        student.update(object)
+        return student
+    }
+    
     func update(object: AVObject) {
         self.studentID = object.objectForKey("studentID").integerValue
         self.roomID = object.objectForKey("roomID").integerValue
-        self.name = object.objectForKey("name").stringValue
-        self.company = object.objectForKey("company").stringValue
-        self.address = object.objectForKey("address").stringValue
-        self.postcode = object.objectForKey("postcode").stringValue
-        self.mobile = object.objectForKey("mobile").stringValue
-        self.email = object.objectForKey("email").stringValue
-        self.qq = object.objectForKey("qq").stringValue
-        self.avatar_small = object.objectForKey("avatar_small").stringValue
-        self.avatar_large = object.objectForKey("avatar_large").stringValue
+        self.name = object.objectForKey("name") as! String
+        self.company = object.objectForKey("company") as! String
+        self.address = object.objectForKey("address") as! String
+        self.postcode = object.objectForKey("postcode") as! String
+        self.mobile = object.objectForKey("mobile") as! String
+        self.email = object.objectForKey("email") as! String
+        self.qq = object.objectForKey("qq") as! String
+        self.avatar_small = object.objectForKey("avatar_small") as! String
+        self.avatar_large = object.objectForKey("avatar_large") as! String
     }
     
     static func getAllStudents() -> NSArray {
@@ -116,5 +122,11 @@ class PMStudent: AVObject {
         let students = query.findObjects(error) as NSArray
         
         return students
+    }
+    
+    static func getAllStudents(block: AVArrayResultBlock) {
+        let query = AVQuery(className: "PMStudent")
+
+        query.findObjectsInBackgroundWithBlock(block)
     }
 }

@@ -15,9 +15,11 @@ class PMStudentCollectCell: UICollectionViewCell {
     
     
     override func awakeFromNib() {
+        self.backgroundColor = UIColor.clearColor()
+        
         ivAvatar.layer.cornerRadius = 40
         ivAvatar.clipsToBounds = true
-        ivAvatar.layer.borderColor = UIColor.whiteColor().CGColor
-        ivAvatar.layer.borderWidth = 3
+//        ivAvatar.layer.borderColor = UIColor.whiteColor().CGColor
+//        ivAvatar.layer.borderWidth = 0.5
     }
 }

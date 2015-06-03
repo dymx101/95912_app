@@ -13,9 +13,17 @@ class PMStudentsVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var numberPerRow: Int = 3
+    
+    var students: NSArray!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        PMStudent.getAllStudents({ (results, error) -> Void in
+            self.students = results as NSArray
+            
+            self.collectionView.reloadData()
+        })
     }
     
     
@@ -36,13 +44,23 @@ class PMStudentsVC: UIViewController {
 extension PMStudentsVC:UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 34
+        if students != nil {
+            return students.count
+        }
+        
+        return Int(0)
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PMStudentCollectCell", forIndexPath: indexPath) as! PMStudentCollectCell
         
-        
+        if (students != nil && students.count > 0) {
+            if let studentData = students[indexPath.row] as? AVObject {
+                let student = PMStudent.createStudent(studentData)
+                cell.lblName.text = student.name
+            }
+        }
         
         return cell
     }

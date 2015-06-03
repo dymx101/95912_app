@@ -109,9 +109,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="108" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x78-po-IzI">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_sample" translatesAutoresizingMaskIntoConstraints="NO" id="x78-po-IzI">
                                                     <rect key="frame" x="14" y="0.0" width="80" height="80"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.65023643090000005" blue="0.70862458880000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="Bay-NQ-XCT"/>
                                                         <constraint firstAttribute="height" constant="80" id="qYF-bv-PcM"/>
@@ -120,12 +120,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ODx-0J-Y3B">
                                                     <rect key="frame" x="35" y="88" width="39" height="18"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" white="0.90218955592105265" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="x78-po-IzI" firstAttribute="top" secondItem="gXl-zP-uD3" secondAttribute="top" id="L1b-cV-de6"/>
                                             <constraint firstAttribute="centerX" secondItem="x78-po-IzI" secondAttribute="centerX" id="R4B-cp-6Rk"/>
@@ -275,4 +276,7 @@
             <point key="canvasLocation" x="-75" y="581"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avatar_sample" width="200" height="200"/>
+    </resources>
 </document>
