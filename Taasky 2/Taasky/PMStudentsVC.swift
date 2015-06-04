@@ -41,7 +41,7 @@ class PMStudentsVC: UIViewController {
 
 }
 
-extension PMStudentsVC:UICollectionViewDataSource {
+extension PMStudentsVC : UICollectionViewDataSource {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if students != nil {
@@ -63,5 +63,20 @@ extension PMStudentsVC:UICollectionViewDataSource {
         }
         
         return cell
+    }
+}
+
+extension PMStudentsVC : UICollectionViewDelegate {
+    
+     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if let studentData = students[indexPath.row] as? AVObject {
+            let student = PMStudent.createStudent(studentData)
+            
+            let vc = UIStoryboard.mainBoard().studentDetailVC() as! PMStudentDetailVC
+            vc.student = student
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
 }

@@ -1,0 +1,38 @@
+//
+//  PMStudentDetailVC.swift
+//  Taasky
+//
+//  Created by D. D. on 6/4/15.
+//  Copyright (c) 2015 Ray Wenderlich. All rights reserved.
+//
+
+import UIKit
+
+class PMStudentDetailVC: UITableViewController {
+    
+    var student: PMStudent?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+    }
+
+
+    // MARK: - Table view data source
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        return 1
+    }
+
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PMStudentDetailCell", forIndexPath: indexPath) as! PMStudentDetailCell
+
+        // Configure the cell...
+
+        return cell
+    }
+
+
+}

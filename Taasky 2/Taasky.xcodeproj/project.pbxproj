@@ -24,6 +24,8 @@
 		EA536AF11B1DF68600546482 /* PMStudentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA536AF01B1DF68600546482 /* PMStudentsVC.swift */; };
 		EA536AF31B1DF94A00546482 /* UIStoryboard+MathMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */; };
 		EAFCCB391B1A48220016ED62 /* Doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = EAFCCB381B1A48220016ED62 /* Doc.txt */; };
+		F2C6F6AB1B20275900F80883 /* PMStudentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6F6AA1B20275900F80883 /* PMStudentDetailVC.swift */; };
+		F2C6F6AD1B202BEC00F80883 /* PMStudentDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6F6AC1B202BEC00F80883 /* PMStudentDetailCell.swift */; };
 		F2D263EB1B1ED86F0031031B /* PMStudentCollectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D263EA1B1ED86F0031031B /* PMStudentCollectCell.swift */; };
 		F2F5861E1B1DAB7C0069B248 /* PMStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,8 @@
 		EA536AF01B1DF68600546482 /* PMStudentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudentsVC.swift; sourceTree = "<group>"; };
 		EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+MathMatch.swift"; sourceTree = "<group>"; };
 		EAFCCB381B1A48220016ED62 /* Doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Doc.txt; sourceTree = "<group>"; };
+		F2C6F6AA1B20275900F80883 /* PMStudentDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudentDetailVC.swift; sourceTree = "<group>"; };
+		F2C6F6AC1B202BEC00F80883 /* PMStudentDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudentDetailCell.swift; sourceTree = "<group>"; };
 		F2D263EA1B1ED86F0031031B /* PMStudentCollectCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudentCollectCell.swift; sourceTree = "<group>"; };
 		F2F586191B1DA7320069B248 /* Taasky-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Taasky-Bridging-Header.h"; sourceTree = "<group>"; };
 		F2F5861D1B1DAB7C0069B248 /* PMStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudent.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				40A904D51AB91FC900D0A33C /* ContainerViewController.swift */,
 				40C059FF1AB8F7F9005CB016 /* MenuViewController.swift */,
 				40C05A011AB8F817005CB016 /* DetailViewController.swift */,
+				F2C6F6AA1B20275900F80883 /* PMStudentDetailVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				F2D263EA1B1ED86F0031031B /* PMStudentCollectCell.swift */,
+				F2C6F6AC1B202BEC00F80883 /* PMStudentDetailCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA536AF31B1DF94A00546482 /* UIStoryboard+MathMatch.swift in Sources */,
+				F2C6F6AD1B202BEC00F80883 /* PMStudentDetailCell.swift in Sources */,
 				40C05A061AB8F86E005CB016 /* Extensions.swift in Sources */,
 				EA536AF11B1DF68600546482 /* PMStudentsVC.swift in Sources */,
 				40C05A001AB8F7F9005CB016 /* MenuViewController.swift in Sources */,
@@ -345,6 +352,7 @@
 				F2D263EB1B1ED86F0031031B /* PMStudentCollectCell.swift in Sources */,
 				40A904D61AB91FC900D0A33C /* ContainerViewController.swift in Sources */,
 				F2F5861E1B1DAB7C0069B248 /* PMStudent.swift in Sources */,
+				F2C6F6AB1B20275900F80883 /* PMStudentDetailVC.swift in Sources */,
 				EA536AEF1B1DF4A100546482 /* defines.swift in Sources */,
 				40C05A021AB8F817005CB016 /* DetailViewController.swift in Sources */,
 			);

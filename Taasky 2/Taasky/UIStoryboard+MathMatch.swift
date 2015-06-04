@@ -16,4 +16,10 @@ extension UIStoryboard {
     func studentsVC()-> UIViewController {
         return self.instantiateViewControllerWithIdentifier("PMStudentsVC") as! UIViewController
     }
+    
+    func studentDetailVC()-> UIViewController {
+        return self.instantiateViewControllerWithIdentifier("PMStudentDetailVC") as! UIViewController
+    }
+    
+    //
 }
