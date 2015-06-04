@@ -16,6 +16,7 @@ class PMStudentDetailVC: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 100
     }
 
 
@@ -29,10 +30,25 @@ class PMStudentDetailVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PMStudentDetailCell", forIndexPath: indexPath) as! PMStudentDetailCell
 
-        // Configure the cell...
+        cell.delegate = self
 
         return cell
     }
 
 
+}
+
+extension PMStudentDetailVC : PMStudentDetailCellDelegate {
+    func presentVC(vc: UIViewController) {
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+        let hud = JGProgressHUD(style: .Dark)
+        hud.textLabel.text = "加载中"
+        hud.showInView(self.view)
+        hud.dismissAfterDelay(1)
+    }
+    
+//    func reloadWhenImagePicked() {
+//        //self.tableView.reloadData()
+//    }
 }

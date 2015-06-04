@@ -1,10 +1,16 @@
 PODS:
   - AVOSCloud (3.1.2.1)
+  - JGProgressHUD (1.2.7)
+  - UzysAssetsPickerController (0.9.7)
 
 DEPENDENCIES:
   - AVOSCloud
+  - JGProgressHUD (~> 1.2.7)
+  - UzysAssetsPickerController (~> 0.9.7)
 
 SPEC CHECKSUMS:
   AVOSCloud: 26962b8cf4a5bf9a77a78ce86893b6ebd1fa43e6
+  JGProgressHUD: a45c1d16adddf7e38092ce3f0d71d3955d2de2ec
+  UzysAssetsPickerController: eae7c24955501a80df34286b1797a2ec6f6b1ab9
 
 COCOAPODS: 0.37.1

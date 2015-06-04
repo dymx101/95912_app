@@ -1,3 +1,5 @@
 platform :ios, '8.0'  
 
 pod 'AVOSCloud'
+pod 'UzysAssetsPickerController', '~> 0.9.7'
+pod 'JGProgressHUD', '~> 1.2.7'

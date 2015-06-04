@@ -8,17 +8,56 @@
 
 import UIKit
 
+protocol PMStudentDetailCellDelegate {
+    func presentVC(vc: UIViewController)
+//    func reloadWhenImagePicked()
+}
+
 class PMStudentDetailCell: UITableViewCell {
+    
+    @IBOutlet weak var btnAvatar: UIButton!
+    @IBOutlet weak var lblName: UILabel!
+    
+    var delegate: PMStudentDetailCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .None
+        
+        btnAvatar.layer.cornerRadius = 50
+        btnAvatar.clipsToBounds = true
+//        self.contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
+
+    }
+    
+    @IBAction func actionChangeAvatar(sender: AnyObject) {
+        let picker = UzysAssetsPickerController()
+        picker.delegate = self
+        picker.maximumNumberOfSelectionMedia = 1
+        
+        delegate?.presentVC(picker)
+
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+}
 
-        // Configure the view for the selected state
+extension PMStudentDetailCell : UzysAssetsPickerControllerDelegate {
+    func uzysAssetsPickerController(picker: UzysAssetsPickerController!, didFinishPickingAssets assets: [AnyObject]!) {
+        
+        let array = assets as NSArray
+        if array.count > 0 {
+            let asset = array.firstObject as! ALAsset
+            if let orientation = UIImageOrientation(rawValue: asset.defaultRepresentation().orientation().rawValue) {
+                
+                var assetRep: ALAssetRepresentation = asset.defaultRepresentation()
+                var iref: CGImage! = assetRep.fullResolutionImage().takeUnretainedValue()
+                var image = UIImage(CGImage: iref)
+//                var image = UIImage(CGImage: iref, scale: assetRep.scale(), orientation: orientation)
+                btnAvatar .setImage(image, forState: .Normal)
+                
+//                delegate?.reloadWhenImagePicked()
+            }
+            
+        }
     }
-
 }

@@ -165,30 +165,33 @@
         <scene sceneID="prd-LI-R6V">
             <objects>
                 <tableViewController storyboardIdentifier="PMStudentDetailVC" id="ocd-8v-jW7" customClass="PMStudentDetailVC" customModule="Taasky" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="117" sectionHeaderHeight="22" sectionFooterHeight="22" id="DWd-5h-0il">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="164" sectionHeaderHeight="22" sectionFooterHeight="22" id="DWd-5h-0il">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PMStudentDetailCell" rowHeight="117" id="fhn-DD-TSc" customClass="PMStudentDetailCell" customModule="Taasky" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PMStudentDetailCell" rowHeight="164" id="fhn-DD-TSc" customClass="PMStudentDetailCell" customModule="Taasky" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fhn-DD-TSc" id="uhu-vO-xbP">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Op-Kg-NBf">
-                                            <rect key="frame" x="275" y="20" width="50" height="50"/>
+                                        <button opaque="NO" contentMode="scaleAspectFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Op-Kg-NBf" userLabel="btnAvatar">
+                                            <rect key="frame" x="250" y="20" width="100" height="100"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="4xN-hS-nfR"/>
-                                                <constraint firstAttribute="width" constant="50" id="N4e-XE-UAq"/>
+                                                <constraint firstAttribute="height" constant="100" id="4xN-hS-nfR"/>
+                                                <constraint firstAttribute="width" constant="100" id="N4e-XE-UAq"/>
                                             </constraints>
                                             <state key="normal" backgroundImage="avatar_sample">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="actionChangeAvatar:" destination="fhn-DD-TSc" eventType="touchUpInside" id="jZP-ay-ZdJ"/>
+                                            </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-1X-BcK">
-                                            <rect key="frame" x="277" y="78" width="46" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-1X-BcK" userLabel="lblName">
+                                            <rect key="frame" x="277" y="128" width="46" height="19"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -200,6 +203,10 @@
                                         <constraint firstItem="L4U-1X-BcK" firstAttribute="top" secondItem="2Op-Kg-NBf" secondAttribute="bottom" constant="8" id="q7H-ez-HHN"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="btnAvatar" destination="2Op-Kg-NBf" id="usW-mU-BFM"/>
+                                    <outlet property="lblName" destination="L4U-1X-BcK" id="qQH-pS-Ump"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
