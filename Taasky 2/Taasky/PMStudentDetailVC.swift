@@ -31,6 +31,7 @@ class PMStudentDetailVC: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("PMStudentDetailCell", forIndexPath: indexPath) as! PMStudentDetailCell
 
         cell.delegate = self
+        cell.lblName.text = student?.name
 
         return cell
     }

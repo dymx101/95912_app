@@ -26,6 +26,7 @@ class PMStudentDetailCell: UITableViewCell {
         
         btnAvatar.layer.cornerRadius = 50
         btnAvatar.clipsToBounds = true
+        btnAvatar.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
 //        self.contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
     }
@@ -47,16 +48,19 @@ extension PMStudentDetailCell : UzysAssetsPickerControllerDelegate {
         let array = assets as NSArray
         if array.count > 0 {
             let asset = array.firstObject as! ALAsset
-            if let orientation = UIImageOrientation(rawValue: asset.defaultRepresentation().orientation().rawValue) {
-                
-                var assetRep: ALAssetRepresentation = asset.defaultRepresentation()
-                var iref: CGImage! = assetRep.fullResolutionImage().takeUnretainedValue()
-                var image = UIImage(CGImage: iref)
-//                var image = UIImage(CGImage: iref, scale: assetRep.scale(), orientation: orientation)
-                btnAvatar .setImage(image, forState: .Normal)
-                
-//                delegate?.reloadWhenImagePicked()
-            }
+            var image = PMObjcUtil.imageFromALAsset(asset)
+            btnAvatar .setImage(image, forState: .Normal)
+            
+//            if let orientation = UIImageOrientation(rawValue: asset.defaultRepresentation().orientation().rawValue) {
+//                
+//                var assetRep: ALAssetRepresentation = asset.defaultRepresentation()
+//                var iref: CGImage! = assetRep.fullResolutionImage().takeUnretainedValue()
+//                var image = UIImage(CGImage: iref)
+////                var image = UIImage(CGImage: iref, scale: assetRep.scale(), orientation: orientation)
+//                btnAvatar .setImage(image, forState: .Normal)
+//                
+////                delegate?.reloadWhenImagePicked()
+//            }
             
         }
     }
