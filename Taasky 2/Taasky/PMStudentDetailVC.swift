@@ -57,7 +57,17 @@ extension PMStudentDetailVC : PMStudentDetailCellDelegate {
         // upload Image
         let data = UIImagePNGRepresentation(image)
         let file: AVFile! = AVFile.fileWithName("avatar.png", data: data) as! AVFile
+        
+        let hud = JGProgressHUD(style: .Dark)
+        hud.interactionType = JGProgressHUDInteractionType.BlockAllTouches
+        hud.textLabel.text = "保存中"
+        hud.showInView(self.view)
+        hud.dismissAfterDelay(1)
+        
         file.saveInBackgroundWithBlock { (success, error) -> Void in
+            
+            hud.dismiss()
+            
             self.student?.avatar_large = file.objectId
             self.student?.avatarLargeImage = image
             self.student?.data?.saveInBackgroundWithBlock({ (success, error) -> Void in
