@@ -18,6 +18,10 @@ class PMStudentsVC: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.title = "成员"
+        self.navigationItem.title = "班级成员"
+        
         PMStudent.getAllStudents({ (results, error) -> Void in
             
             self.students = results as NSArray

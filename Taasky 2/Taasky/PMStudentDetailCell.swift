@@ -16,18 +16,21 @@ protocol PMStudentDetailCellDelegate {
 
 class PMStudentDetailCell: UITableViewCell {
     
+    @IBOutlet weak var ivAvatar: UIImageView!
     @IBOutlet weak var btnAvatar: UIButton!
     @IBOutlet weak var lblName: UILabel!
     
     var delegate: PMStudentDetailCellDelegate?
 
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         self.selectionStyle = .None
         
-        btnAvatar.layer.cornerRadius = 50
-        btnAvatar.clipsToBounds = true
-        btnAvatar.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
+        lblName.text = ""
+        ivAvatar.layer.cornerRadius = 50
+        ivAvatar.clipsToBounds = true
+//        btnAvatar.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
 //        self.contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
 
     }
@@ -50,7 +53,7 @@ extension PMStudentDetailCell : UzysAssetsPickerControllerDelegate {
         if array.count > 0 {
             let asset = array.firstObject as! ALAsset
             var image = PMObjcUtil.imageFromALAsset(asset)
-            btnAvatar.setImage(image, forState: .Normal)
+            ivAvatar.image = image
             
             delegate?.saveAvatar(image)
         }

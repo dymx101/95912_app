@@ -14,6 +14,7 @@ class PMStudentDetailVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = student?.name
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100
@@ -31,10 +32,10 @@ class PMStudentDetailVC: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("PMStudentDetailCell", forIndexPath: indexPath) as! PMStudentDetailCell
 
         cell.delegate = self
-        cell.lblName.text = student?.name
+//        cell.lblName.text = student?.name
         
         student?.loadLargeAvatar(false) { (image) -> Void in
-            cell.btnAvatar.setImage(image, forState: .Normal)
+            cell.ivAvatar.image = image
         }
 
         return cell
@@ -67,6 +68,16 @@ extension PMStudentDetailVC : PMStudentDetailCellDelegate {
             
             hud.dismiss()
             
+            // delete old image file
+            if let avatar_large = self.student?.avatar_large {
+                AVFile.getFileWithObjectId(avatar_large, withBlock: { (file, error) -> Void in
+                    if file != nil {
+                        file.deleteInBackgroundWithBlock(nil)
+                    }
+                })
+            }
+            
+            // save objectID of the newly uploaded image to student
             self.student?.avatar_large = file.objectId
             self.student?.avatarLargeImage = image
             self.student?.data?.saveInBackgroundWithBlock({ (success, error) -> Void in

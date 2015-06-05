@@ -179,6 +179,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		EAA2646B1B21E5B100929B7F /* SideVC */ = {
+			isa = PBXGroup;
+			children = (
+				40A904D51AB91FC900D0A33C /* ContainerViewController.swift */,
+				40C059FF1AB8F7F9005CB016 /* MenuViewController.swift */,
+				40C05A011AB8F817005CB016 /* DetailViewController.swift */,
+			);
+			name = SideVC;
+			sourceTree = "<group>";
+		};
 		F2BD19901B204D7B002DC95F /* ObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,10 +201,8 @@
 		F2D263E81B1ED7AB0031031B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				EAA2646B1B21E5B100929B7F /* SideVC */,
 				EA536AF01B1DF68600546482 /* PMStudentsVC.swift */,
-				40A904D51AB91FC900D0A33C /* ContainerViewController.swift */,
-				40C059FF1AB8F7F9005CB016 /* MenuViewController.swift */,
-				40C05A011AB8F817005CB016 /* DetailViewController.swift */,
 				F2C6F6AA1B20275900F80883 /* PMStudentDetailVC.swift */,
 			);
 			name = ViewControllers;
