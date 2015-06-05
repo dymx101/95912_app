@@ -55,11 +55,12 @@ extension PMStudentDetailVC : PMStudentDetailCellDelegate {
         let file: AVFile! = AVFile.fileWithName("avatar.png", data: data) as! AVFile
         file.saveInBackgroundWithBlock { (success, error) -> Void in
             self.student?.avatar_large = file.objectId
-            self.student?.saveInBackgroundWithBlock({ (success, error) -> Void in
+            self.student?.data?.saveInBackgroundWithBlock({ (success, error) -> Void in
                 
                 if (success) {
                     let hud = JGProgressHUD(style: .Dark)
-                    hud.textLabel.text = "头像已保存"
+                    hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                    hud.textLabel.text = "已保存"
                     hud.showInView(self.view)
                     hud.dismissAfterDelay(1)
                 }

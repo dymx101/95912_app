@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         newStudents.append(PMStudent.createStudent("李海京", studentID: 34))
         
         for student in newStudents {
-            student.save()
+            student.data?.save()
         }
     }
   
