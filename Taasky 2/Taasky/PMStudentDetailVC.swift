@@ -32,6 +32,10 @@ class PMStudentDetailVC: UITableViewController {
 
         cell.delegate = self
         cell.lblName.text = student?.name
+        
+        student?.loadLargeAvatar(false) { (image) -> Void in
+            cell.btnAvatar.setImage(image, forState: .Normal)
+        }
 
         return cell
     }

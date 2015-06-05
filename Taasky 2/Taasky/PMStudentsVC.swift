@@ -20,7 +20,22 @@ class PMStudentsVC: UIViewController {
         super.viewDidLoad()
         
         PMStudent.getAllStudents({ (results, error) -> Void in
+            
             self.students = results as NSArray
+            
+            self.students = self.students.sortedArrayUsingComparator({ (stu1, stu2) -> NSComparisonResult in
+                if let stu1_ = stu1 as? AVObject {
+                    if let stu2_ = stu2 as? AVObject {
+                        
+                        let result = stu1_.objectForKey("studentID").integerValue > stu2_.objectForKey("studentID").integerValue
+                        
+                        return NSComparisonResult(rawValue: Int(result))!
+                        
+                    }
+                }
+                
+                return NSComparisonResult.OrderedAscending
+            })
             
             self.collectionView.reloadData()
         })
@@ -59,6 +74,10 @@ extension PMStudentsVC : UICollectionViewDataSource {
             if let studentData = students[indexPath.row] as? AVObject {
                 let student = PMStudent.createStudent(studentData)
                 cell.lblName.text = student.name
+
+                student.loadLargeAvatar(false) { (image) -> Void in
+                    cell.ivAvatar.image = image
+                }
             }
         }
         

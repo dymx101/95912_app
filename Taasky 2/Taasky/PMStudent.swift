@@ -69,13 +69,13 @@ class PMStudent: NSObject {
         }
     }
     
-    var avatar_small = "" {
+    var avatar_small: String? = "" {
         didSet {
             data?.setObject(avatar_small, forKey: "avatar_small")
         }
     }
     
-    var avatar_large = "" {
+    var avatar_large: String? = "" {
         didSet {
             data?.setObject(avatar_large, forKey: "avatar_large")
         }
@@ -86,6 +86,8 @@ class PMStudent: NSObject {
            update(data)
         }
     }
+    
+    var avatarLargeImage: UIImage?
     
     
     // MARK: methods
@@ -113,22 +115,6 @@ class PMStudent: NSObject {
         return student
     }
     
-    func update(object_: AVObject?) {
-        if let object = object_ {
-            self.studentID = object.objectForKey("studentID").integerValue
-            self.roomID = object.objectForKey("roomID").integerValue
-            self.name = object.objectForKey("name") as! String
-            self.company = object.objectForKey("company") as! String
-            self.address = object.objectForKey("address") as! String
-            self.postcode = object.objectForKey("postcode") as! String
-            self.mobile = object.objectForKey("mobile") as! String
-            self.email = object.objectForKey("email") as! String
-            self.qq = object.objectForKey("qq") as! String
-            self.avatar_small = object.objectForKey("avatar_small") as! String
-            self.avatar_large = object.objectForKey("avatar_large") as! String
-        }
-    }
-    
     static func getAllStudents() -> NSArray {
         let query = AVQuery(className: "PMStudent")
         var error:NSErrorPointer = nil
@@ -141,5 +127,52 @@ class PMStudent: NSObject {
         let query = AVQuery(className: "PMStudent")
 
         query.findObjectsInBackgroundWithBlock(block)
+    }
+    
+    // MARK:
+    func update(object_: AVObject?) {
+        if let object = object_ {
+            self.studentID = object.objectForKey("studentID").integerValue
+            self.roomID = object.objectForKey("roomID").integerValue
+            self.name = object.objectForKey("name") as! String
+            self.company = object.objectForKey("company") as! String
+            self.address = object.objectForKey("address") as! String
+            self.postcode = object.objectForKey("postcode") as! String
+            self.mobile = object.objectForKey("mobile") as! String
+            self.email = object.objectForKey("email") as! String
+            self.qq = object.objectForKey("qq") as! String
+            self.avatar_small = object.objectForKey("avatar_small") as? String
+            self.avatar_large = object.objectForKey("avatar_large") as? String
+        }
+    }
+    
+    func loadLargeAvatar(refresh: Bool, completion:(image: UIImage!) -> Void) {
+        
+        if (!refresh && avatarLargeImage != nil) {
+            completion(image: avatarLargeImage)
+            return
+        }
+        
+        if let str = avatar_large {
+            
+            if (count(str) > 0) {
+                AVFile.getFileWithObjectId(avatar_large, withBlock: { (file, error) -> Void in
+                    if file != nil {
+                        file.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                            if data != nil {
+                                let image = UIImage(data: data, scale: UIScreen.mainScreen().scale)
+                                if let image_ = image {
+                                    self.avatarLargeImage = image_
+                                    completion(image: image_)
+                                }
+                            }
+                        })
+                    }
+                })
+            }
+            
+        }
+
+        completion(image: UIImage(named: "avatar_sample")!)
     }
 }
