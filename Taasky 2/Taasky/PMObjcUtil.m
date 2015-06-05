@@ -12,7 +12,7 @@
 @implementation PMObjcUtil
 
 +(UIImage *)imageFromALAsset:(ALAsset *)asset {
-    return [UIImage imageWithCGImage:asset.defaultRepresentation.fullResolutionImage scale:asset.defaultRepresentation.scale orientation:(UIImageOrientation)asset.defaultRepresentation.orientation];
+    return [UIImage imageWithCGImage:asset.defaultRepresentation.fullScreenImage scale:asset.defaultRepresentation.scale orientation:(UIImageOrientation)asset.defaultRepresentation.orientation];
 }
 
 @end

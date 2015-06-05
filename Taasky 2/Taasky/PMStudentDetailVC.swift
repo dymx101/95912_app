@@ -59,6 +59,7 @@ extension PMStudentDetailVC : PMStudentDetailCellDelegate {
         let file: AVFile! = AVFile.fileWithName("avatar.png", data: data) as! AVFile
         file.saveInBackgroundWithBlock { (success, error) -> Void in
             self.student?.avatar_large = file.objectId
+            self.student?.avatarLargeImage = image
             self.student?.data?.saveInBackgroundWithBlock({ (success, error) -> Void in
                 
                 if (success) {

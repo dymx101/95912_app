@@ -19,6 +19,7 @@ class PMStudentCollectCell: UICollectionViewCell {
         
         ivAvatar.layer.cornerRadius = 40
         ivAvatar.clipsToBounds = true
+        ivAvatar.contentMode = UIViewContentMode.ScaleAspectFill
 //        ivAvatar.layer.borderColor = UIColor.whiteColor().CGColor
 //        ivAvatar.layer.borderWidth = 0.5
     }

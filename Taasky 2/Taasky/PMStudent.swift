@@ -126,7 +126,22 @@ class PMStudent: NSObject {
     static func getAllStudents(block: AVArrayResultBlock) {
         let query = AVQuery(className: "PMStudent")
 
-        query.findObjectsInBackgroundWithBlock(block)
+        query.findObjectsInBackgroundWithBlock { (array, error) -> Void in
+            
+            if array != nil {
+                let arr = array as NSArray
+                
+                var modeledArr = NSMutableArray()
+                arr.enumerateObjectsUsingBlock({ (object, idx, stop) -> Void in
+                    if let object = object as? AVObject {
+                        let stu = PMStudent.createStudent(object)
+                        modeledArr.addObject(stu)
+                    }
+                })
+                
+                block(modeledArr as [AnyObject], error)
+            }
+        }
     }
     
     // MARK:

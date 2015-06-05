@@ -24,10 +24,10 @@ class PMStudentsVC: UIViewController {
             self.students = results as NSArray
             
             self.students = self.students.sortedArrayUsingComparator({ (stu1, stu2) -> NSComparisonResult in
-                if let stu1_ = stu1 as? AVObject {
-                    if let stu2_ = stu2 as? AVObject {
+                if let stu1_ = stu1 as? PMStudent {
+                    if let stu2_ = stu2 as? PMStudent {
                         
-                        let result = stu1_.objectForKey("studentID").integerValue > stu2_.objectForKey("studentID").integerValue
+                        let result = stu1_.studentID > stu2_.studentID
                         
                         return NSComparisonResult(rawValue: Int(result))!
                         
@@ -39,6 +39,12 @@ class PMStudentsVC: UIViewController {
             
             self.collectionView.reloadData()
         })
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.collectionView.reloadData()
     }
     
     
@@ -71,11 +77,11 @@ extension PMStudentsVC : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PMStudentCollectCell", forIndexPath: indexPath) as! PMStudentCollectCell
         
         if (students != nil && students.count > 0) {
-            if let studentData = students[indexPath.row] as? AVObject {
-                let student = PMStudent.createStudent(studentData)
-                cell.lblName.text = student.name
+            if let studentData = students[indexPath.row] as? PMStudent {
+//                let student = PMStudent.createStudent(studentData)
+                cell.lblName.text = studentData.name
 
-                student.loadLargeAvatar(false) { (image) -> Void in
+                studentData.loadLargeAvatar(false) { (image) -> Void in
                     cell.ivAvatar.image = image
                 }
             }
@@ -89,11 +95,11 @@ extension PMStudentsVC : UICollectionViewDelegate {
     
      func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        if let studentData = students[indexPath.row] as? AVObject {
-            let student = PMStudent.createStudent(studentData)
+        if let studentData = students[indexPath.row] as? PMStudent {
+//            let student = PMStudent.createStudent(studentData)
             
             let vc = UIStoryboard.mainBoard().studentDetailVC() as! PMStudentDetailVC
-            vc.student = student
+            vc.student = studentData
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
