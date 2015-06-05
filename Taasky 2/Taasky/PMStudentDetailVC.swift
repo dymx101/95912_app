@@ -49,7 +49,22 @@ extension PMStudentDetailVC : PMStudentDetailCellDelegate {
         hud.dismissAfterDelay(1)
     }
     
-//    func reloadWhenImagePicked() {
-//        //self.tableView.reloadData()
-//    }
+    func saveAvatar(image: UIImage) {
+        // upload Image
+        let data = UIImagePNGRepresentation(image)
+        let file: AVFile! = AVFile.fileWithName("avatar.png", data: data) as! AVFile
+        file.saveInBackgroundWithBlock { (success, error) -> Void in
+            self.student?.avatar_large = file.objectId
+            self.student?.saveInBackgroundWithBlock({ (success, error) -> Void in
+                
+                if (success) {
+                    let hud = JGProgressHUD(style: .Dark)
+                    hud.textLabel.text = "头像已保存"
+                    hud.showInView(self.view)
+                    hud.dismissAfterDelay(1)
+                }
+            })
+        }
+        
+    }
 }
