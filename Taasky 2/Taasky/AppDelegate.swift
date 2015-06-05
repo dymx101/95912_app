@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
     UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+    let attrs = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    UINavigationBar.appearance().titleTextAttributes = attrs
     
     AVOSCloud.setApplicationId("pg1lj49lhnhv6p13h83a5cx3n23y1r2779umy3ul69flymj5", clientKey: "yh4rkt4hb3s2umq1jbnipk3w9f35u3zq09hauwcst80njn85")
     
@@ -31,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initStudents()
         
     } else {
-        print(students)
+//        print(students)
     }
     
     return true

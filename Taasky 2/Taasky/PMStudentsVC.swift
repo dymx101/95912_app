@@ -8,9 +8,8 @@
 
 import UIKit
 
-class PMStudentsVC: UIViewController {
+class PMStudentsVC: UICollectionViewController {
     
-    @IBOutlet weak var collectionView: UICollectionView!
     
     var numberPerRow: Int = 3
     
@@ -37,22 +36,22 @@ class PMStudentsVC: UIViewController {
                 return NSComparisonResult.OrderedAscending
             })
             
-            self.collectionView.reloadData()
+            self.collectionView?.reloadData()
         })
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.collectionView.reloadData()
+        self.collectionView?.reloadData()
     }
     
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let collectionWidth = CGRectGetWidth(collectionView.bounds)
+        let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        let collectionWidth = CGRectGetWidth(collectionView!.bounds)
 
         let insets = layout.sectionInset.left + layout.sectionInset.right
         let spacing = layout.minimumLineSpacing * CGFloat(numberPerRow + 1)
@@ -64,7 +63,7 @@ class PMStudentsVC: UIViewController {
 
 extension PMStudentsVC : UICollectionViewDataSource {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if students != nil {
             return students.count
         }
@@ -72,7 +71,7 @@ extension PMStudentsVC : UICollectionViewDataSource {
         return Int(0)
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PMStudentCollectCell", forIndexPath: indexPath) as! PMStudentCollectCell
         
@@ -93,7 +92,7 @@ extension PMStudentsVC : UICollectionViewDataSource {
 
 extension PMStudentsVC : UICollectionViewDelegate {
     
-     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         if let studentData = students[indexPath.row] as? PMStudent {
 //            let student = PMStudent.createStudent(studentData)
