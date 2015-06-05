@@ -62,7 +62,6 @@ extension PMStudentDetailVC : PMStudentDetailCellDelegate {
         hud.interactionType = JGProgressHUDInteractionType.BlockAllTouches
         hud.textLabel.text = "保存中"
         hud.showInView(self.view)
-        hud.dismissAfterDelay(1)
         
         file.saveInBackgroundWithBlock { (success, error) -> Void in
             
