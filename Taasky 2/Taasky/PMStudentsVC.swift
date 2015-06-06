@@ -14,12 +14,19 @@ class PMStudentsVC: UICollectionViewController {
     var numberPerRow: Int = 3
     
     var students: NSArray!
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleProfileChanged:", name: notify_student_profile_changed, object: nil)
         
-        self.title = "成员"
+        
+//        self.title = "成员"
         self.navigationItem.title = "班级成员"
         
         PMStudent.getAllStudents({ (results, error) -> Void in
@@ -44,12 +51,6 @@ class PMStudentsVC: UICollectionViewController {
         })
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.collectionView?.reloadData()
-    }
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -61,6 +62,21 @@ class PMStudentsVC: UICollectionViewController {
         let spacing = layout.minimumLineSpacing * CGFloat(numberPerRow + 1)
         let width = (collectionWidth - insets - spacing) / CGFloat(numberPerRow)
         layout.itemSize = CGSizeMake(width, 128)
+    }
+    
+    
+    func handleProfileChanged(note: NSNotification) {
+        if note.name == notify_student_profile_changed {
+            if let student = note.object as? PMStudent {
+                students.enumerateObjectsUsingBlock({ (stu, idx, stop) -> Void in
+                    if student.studentID == (stu as! PMStudent).studentID {
+                        self.collectionView?.reloadItemsAtIndexPaths([NSIndexPath(forRow: idx, inSection: 0)])
+                        stop.memory = true
+                    }
+                })
+            }
+//            self.collectionView?.reloadData()
+        }
     }
 
 }

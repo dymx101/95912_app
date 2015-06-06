@@ -12,3 +12,7 @@ enum PMMenuItemType: Int {
     case Contacts = 0
     case About = 1
 }
+
+
+
+let notify_student_profile_changed = "notify_student_profile_changed"

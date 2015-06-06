@@ -99,6 +99,8 @@ extension PMStudentDetailVC : PMStudentDetailCellDelegate {
                     hud.textLabel.text = "已保存"
                     hud.showInView(self.view)
                     hud.dismissAfterDelay(1)
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName(notify_student_profile_changed, object: self.student)
                 }
             })
         }
