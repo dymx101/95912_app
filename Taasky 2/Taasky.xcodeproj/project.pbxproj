@@ -19,7 +19,7 @@
 		40C05A041AB8F831005CB016 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C05A031AB8F831005CB016 /* MenuItemCell.swift */; };
 		40C05A061AB8F86E005CB016 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C05A051AB8F86E005CB016 /* Extensions.swift */; };
 		40C05A081AB8F9BB005CB016 /* MenuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 40C05A071AB8F9BB005CB016 /* MenuItems.plist */; };
-		A4E1B66273A80C8D30D23A6D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E216B1141E778ADCA6F398CA /* libPods.a */; };
+		59A54F40E3BB3272834107CF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 853AFB4E67E7153744210852 /* libPods.a */; };
 		EA536AEF1B1DF4A100546482 /* defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA536AEE1B1DF4A100546482 /* defines.swift */; };
 		EA536AF11B1DF68600546482 /* PMStudentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA536AF01B1DF68600546482 /* PMStudentsVC.swift */; };
 		EA536AF31B1DF94A00546482 /* UIStoryboard+MathMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */; };
@@ -59,7 +59,7 @@
 		40C05A031AB8F831005CB016 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		40C05A051AB8F86E005CB016 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		40C05A071AB8F9BB005CB016 /* MenuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuItems.plist; sourceTree = "<group>"; };
-		E216B1141E778ADCA6F398CA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		853AFB4E67E7153744210852 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA536AEE1B1DF4A100546482 /* defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = defines.swift; sourceTree = "<group>"; };
 		EA536AF01B1DF68600546482 /* PMStudentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMStudentsVC.swift; sourceTree = "<group>"; };
 		EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+MathMatch.swift"; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4E1B66273A80C8D30D23A6D /* libPods.a in Frameworks */,
+				59A54F40E3BB3272834107CF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +105,7 @@
 		1EC10F281E68076BCD7E5427 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E216B1141E778ADCA6F398CA /* libPods.a */,
+				853AFB4E67E7153744210852 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

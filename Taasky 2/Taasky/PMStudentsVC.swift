@@ -84,9 +84,19 @@ extension PMStudentsVC : UICollectionViewDataSource {
 //                let student = PMStudent.createStudent(studentData)
                 cell.lblName.text = studentData.name
 
-                studentData.loadLargeAvatar(false) { (image) -> Void in
-                    cell.ivAvatar.image = image
-                }
+//                studentData.loadLargeAvatar(false) { (image) -> Void in
+//                    cell.ivAvatar.image = image
+//                }
+                
+                studentData.loadLargeAvatarFile(false, completion: { (file) -> Void in
+                    
+                    if (file != nil) {
+                        let url = NSURL(string: file.url)
+                        let placeholder = UIImage(named: "avatar_sample")
+                        cell.ivAvatar.sd_setImageWithURL(url, placeholderImage: placeholder);
+                    }
+                    
+                })
             }
         }
         

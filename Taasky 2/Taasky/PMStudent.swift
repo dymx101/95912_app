@@ -88,7 +88,7 @@ class PMStudent: NSObject {
     }
     
     var avatarLargeImage: UIImage?
-    
+    var avatarLargeFile: AVFile?
     
     // MARK: methods
     static func createStudent(name: String, studentID: Int) -> PMStudent {
@@ -168,9 +168,14 @@ class PMStudent: NSObject {
             return
         }
         
+        var canLoadFile = false
+        
         if let str = avatar_large {
             
             if (count(str) > 0) {
+                
+                let canLoadFile = true
+                
                 AVFile.getFileWithObjectId(avatar_large, withBlock: { (file, error) -> Void in
                     if file != nil {
                         file.getDataInBackgroundWithBlock({ (data, error) -> Void in
@@ -188,6 +193,35 @@ class PMStudent: NSObject {
             
         }
 
-        completion(image: UIImage(named: "avatar_sample")!)
+        if (!canLoadFile) {
+            completion(image: UIImage(named: "avatar_sample")!)
+        }
+    }
+    
+    func loadLargeAvatarFile(refresh: Bool, completion:(file: AVFile!) -> Void) {
+        
+        if (!refresh && avatarLargeFile != nil) {
+            completion(file: avatarLargeFile)
+            return
+        }
+        
+        var canLoadFile = false
+        
+        if let str = avatar_large {
+            
+            if (count(str) > 0) {
+                
+                canLoadFile = true
+                
+                AVFile.getFileWithObjectId(avatar_large, withBlock: { (file, error) -> Void in
+                    completion(file: file)
+                })
+            }
+            
+        }
+        
+        if (!canLoadFile) {
+            completion(file: nil)
+        }
     }
 }

@@ -34,9 +34,20 @@ class PMStudentDetailVC: UITableViewController {
         cell.delegate = self
 //        cell.lblName.text = student?.name
         
-        student?.loadLargeAvatar(false) { (image) -> Void in
-            cell.ivAvatar.image = image
-        }
+//        student?.loadLargeAvatar(false) { (image) -> Void in
+//            cell.ivAvatar.image = image
+//            
+//        }
+        
+        student?.loadLargeAvatarFile(false, completion: { (file) -> Void in
+            
+            if (file != nil) {
+                let url = NSURL(string: file.url)
+                let placeholder = UIImage(named: "avatar_sample")
+                cell.ivAvatar.sd_setImageWithURL(url, placeholderImage: placeholder);
+            }
+            
+        })
 
         return cell
     }
