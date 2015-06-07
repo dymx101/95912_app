@@ -27,14 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //    testObject.setObject("bar", forKey: "foo")
 //    testObject.save()
     
-    let students = PMStudent.getAllStudents()
-    if (students.count == 0) {
-        
-        initStudents()
-        
-    } else {
-//        print(students)
-    }
+//    let students = PMStudent.getAllStudents()
+//    if (students.count == 0) {
+//        
+//        initStudents()
+//        
+//    } else {
+////        print(students)
+//    }
     
     return true
   }

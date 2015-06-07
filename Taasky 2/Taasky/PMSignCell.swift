@@ -13,11 +13,17 @@ class PMSignCell: UITableViewCell {
     @IBOutlet weak var textfieldUserName: UITextField!
     @IBOutlet weak var textfieldPwd: UITextField!
     @IBOutlet weak var btnSign: UIButton!
+    @IBOutlet weak var btnSwitch: UIButton!
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        textfieldUserName.layer.cornerRadius = 2
+        textfieldPwd.layer.cornerRadius = 2
     }
 
+    @IBAction func actionSwitch(sender: AnyObject) {
+        btnSign.selected = !btnSign.selected
+    }
 }

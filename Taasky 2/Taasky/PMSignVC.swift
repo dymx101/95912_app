@@ -45,26 +45,57 @@ class PMSignVC: UITableViewController {
         println("sign up")
         if let username = tfUserName?.text {
             if let pwd = tfPwd?.text {
-                let newUser = AVUser()
-                newUser.username = username
-                newUser.password = pwd
                 
-                newUser.signUpInBackgroundWithBlock({ (success, error) -> Void in
-                    if (success) {
-                        
-                        let hud = JGProgressHUD(style: .Light)
-                        hud.indicatorView = JGProgressHUDSuccessIndicatorView()
-                        hud.textLabel.text = "注册成功"
-                        hud.showInView(self.view)
-                        hud.dismissAfterDelay(2)
-                        
-                        self.tfUserName?.text = ""
-                        self.tfPwd?.text = ""
-                        
-                    } else {
-                        
-                    }
-                })
+                let user = AVUser()
+                user.username = username
+                user.password = pwd
+                
+                if (sender.selected) {
+                    
+                    AVUser.logInWithUsernameInBackground(username, password: pwd, block: { (user, error) -> Void in
+                        if (user != nil) {
+                            
+                            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                            
+                        } else {
+                            
+                            let hud = JGProgressHUD(style: .Light)
+                            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                            hud.textLabel.text = "登陆失败，请检查用户名密码是否正确"
+                            hud.showInView(self.view)
+                            hud.dismissAfterDelay(2)
+                            
+                        }
+                    })
+                    
+                } else {
+                    
+                    
+                    
+                    user.signUpInBackgroundWithBlock({ (success, error) -> Void in
+                        if (success) {
+                            
+                            let hud = JGProgressHUD(style: .Light)
+                            hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                            hud.textLabel.text = "注册成功"
+                            hud.showInView(self.view)
+                            hud.dismissAfterDelay(2)
+                            
+                            self.tfUserName?.text = ""
+                            self.tfPwd?.text = ""
+                            
+                        } else {
+                            
+                            let hud = JGProgressHUD(style: .Light)
+                            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                            hud.textLabel.text = error?.domain
+                            hud.showInView(self.view)
+                            hud.dismissAfterDelay(2)
+                            
+                        }
+                    })
+                    
+                }
             }
         }
     }

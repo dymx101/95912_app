@@ -25,6 +25,7 @@
 		EA536AF31B1DF94A00546482 /* UIStoryboard+MathMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */; };
 		EA66AFAE1B23F0A600EA80E8 /* PMSignVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA66AFAD1B23F0A600EA80E8 /* PMSignVC.swift */; };
 		EA66AFB01B23F10300EA80E8 /* PMSignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA66AFAF1B23F10300EA80E8 /* PMSignCell.swift */; };
+		EABD78C41B24584800E006CB /* PMSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABD78C31B24584800E006CB /* PMSettingsVC.swift */; };
 		EAFCCB391B1A48220016ED62 /* Doc.txt in Resources */ = {isa = PBXBuildFile; fileRef = EAFCCB381B1A48220016ED62 /* Doc.txt */; };
 		F2BD19931B204DA4002DC95F /* PMObjcUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BD19921B204DA4002DC95F /* PMObjcUtil.m */; };
 		F2C6F6AB1B20275900F80883 /* PMStudentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6F6AA1B20275900F80883 /* PMStudentDetailVC.swift */; };
@@ -67,6 +68,7 @@
 		EA536AF21B1DF94A00546482 /* UIStoryboard+MathMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+MathMatch.swift"; sourceTree = "<group>"; };
 		EA66AFAD1B23F0A600EA80E8 /* PMSignVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSignVC.swift; sourceTree = "<group>"; };
 		EA66AFAF1B23F10300EA80E8 /* PMSignCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSignCell.swift; sourceTree = "<group>"; };
+		EABD78C31B24584800E006CB /* PMSettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMSettingsVC.swift; sourceTree = "<group>"; };
 		EAFCCB381B1A48220016ED62 /* Doc.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Doc.txt; sourceTree = "<group>"; };
 		F2BD19911B204DA4002DC95F /* PMObjcUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMObjcUtil.h; sourceTree = "<group>"; };
 		F2BD19921B204DA4002DC95F /* PMObjcUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMObjcUtil.m; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				EA536AF01B1DF68600546482 /* PMStudentsVC.swift */,
 				F2C6F6AA1B20275900F80883 /* PMStudentDetailVC.swift */,
 				EA66AFAD1B23F0A600EA80E8 /* PMSignVC.swift */,
+				EABD78C31B24584800E006CB /* PMSettingsVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				F2BD19931B204DA4002DC95F /* PMObjcUtil.m in Sources */,
 				F2C6F6AB1B20275900F80883 /* PMStudentDetailVC.swift in Sources */,
 				EA536AEF1B1DF4A100546482 /* defines.swift in Sources */,
+				EABD78C41B24584800E006CB /* PMSettingsVC.swift in Sources */,
 				40C05A021AB8F817005CB016 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
