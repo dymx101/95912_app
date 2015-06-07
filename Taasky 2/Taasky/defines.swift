@@ -16,3 +16,4 @@ enum PMMenuItemType: Int {
 
 
 let notify_student_profile_changed = "notify_student_profile_changed"
+let avatar_default_image = UIImage(named: "avatar_sample")

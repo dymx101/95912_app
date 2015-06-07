@@ -89,6 +89,7 @@ class PMStudent: NSObject {
     
     var avatarLargeImage: UIImage?
     var avatarLargeFile: AVFile?
+    var avatarLargeURL: String?
     
     // MARK: methods
     static func createStudent(name: String, studentID: Int) -> PMStudent {
@@ -118,9 +119,13 @@ class PMStudent: NSObject {
     static func getAllStudents() -> NSArray {
         let query = AVQuery(className: "PMStudent")
         var error:NSErrorPointer = nil
-        let students = query.findObjects(error) as NSArray
         
-        return students
+        let studentsData: [AnyObject]! = query.findObjects(error)
+        if studentsData != nil {
+            return studentsData as NSArray
+        }
+        
+        return NSArray()
     }
     
     static func getAllStudents(block: AVArrayResultBlock) {

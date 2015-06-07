@@ -52,6 +52,17 @@ class PMStudentsVC: UICollectionViewController {
     }
     
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let currentUser = AVUser.currentUser() {
+            
+        } else {
+            self.performSegueWithIdentifier("segue_contacts2sign", sender: self)
+        }
+    }
+    
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -75,7 +86,16 @@ class PMStudentsVC: UICollectionViewController {
                     }
                 })
             }
-//            self.collectionView?.reloadData()
+        }
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if (segue.identifier == "segue_contacts2sign") {
+            if let vc = segue.destinationViewController as? PMSignVC {
+                
+            }
         }
     }
 
@@ -104,15 +124,21 @@ extension PMStudentsVC : UICollectionViewDataSource {
 //                    cell.ivAvatar.image = image
 //                }
                 
-                studentData.loadLargeAvatarFile(false, completion: { (file) -> Void in
-                    
-                    if (file != nil) {
-                        let url = NSURL(string: file.url)
-                        let placeholder = UIImage(named: "avatar_sample")
-                        cell.ivAvatar.sd_setImageWithURL(url, placeholderImage: placeholder);
-                    }
-                    
-                })
+                if let urlStr = studentData.avatarLargeURL {
+                    cell.ivAvatar.sd_setImageWithURL(NSURL(string: urlStr), placeholderImage: avatar_default_image)
+                } else {
+                    studentData.loadLargeAvatarFile(false, completion: { (file) -> Void in
+                        
+                        if (file != nil) {
+                            studentData.avatarLargeURL = file.url
+                            let url = NSURL(string: file.url)
+                            
+                            cell.ivAvatar.sd_setImageWithURL(url, placeholderImage: avatar_default_image)
+                        }
+                        
+                    })
+                }
+                
             }
         }
         
