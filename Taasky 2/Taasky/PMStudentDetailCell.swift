@@ -18,7 +18,9 @@ class PMStudentDetailCell: UITableViewCell {
     
     @IBOutlet weak var ivAvatar: UIImageView!
     @IBOutlet weak var btnAvatar: UIButton!
-    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var btnEmail: UIButton!
+    @IBOutlet weak var btnCall: UIButton!
+    @IBOutlet weak var btnSMS: UIButton!
     
     var delegate: PMStudentDetailCellDelegate?
 
@@ -27,9 +29,10 @@ class PMStudentDetailCell: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .None
         
-        lblName.text = ""
         ivAvatar.layer.cornerRadius = 50
         ivAvatar.clipsToBounds = true
+//        btnSMS.layer.cornerRadius = 32
+//        btnSMS.clipsToBounds = true
 //        btnAvatar.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
 //        self.contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
 

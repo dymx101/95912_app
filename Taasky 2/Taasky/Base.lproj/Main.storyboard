@@ -255,12 +255,12 @@
         <scene sceneID="prd-LI-R6V">
             <objects>
                 <tableViewController storyboardIdentifier="PMStudentDetailVC" id="ocd-8v-jW7" customClass="PMStudentDetailVC" customModule="Taasky" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="164" sectionHeaderHeight="22" sectionFooterHeight="22" id="DWd-5h-0il">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="565" sectionHeaderHeight="22" sectionFooterHeight="22" id="DWd-5h-0il">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.2666666667" green="0.41960784309999999" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PMStudentDetailCell" rowHeight="164" id="fhn-DD-TSc" customClass="PMStudentDetailCell" customModule="Taasky" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PMStudentDetailCell" rowHeight="565" id="fhn-DD-TSc" customClass="PMStudentDetailCell" customModule="Taasky" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fhn-DD-TSc" id="uhu-vO-xbP">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -281,29 +281,68 @@
                                                 <action selector="actionChangeAvatar:" destination="fhn-DD-TSc" eventType="touchUpInside" id="jZP-ay-ZdJ"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4U-1X-BcK" userLabel="lblName">
-                                            <rect key="frame" x="277" y="128" width="46" height="19"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aur-Nq-X76">
+                                            <rect key="frame" x="268" y="141" width="64" height="64"/>
+                                            <state key="normal" image="icon_call">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbx-fq-bV8">
+                                            <rect key="frame" x="169" y="141" width="64" height="64"/>
+                                            <state key="normal" image="icon_email">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knw-CQ-tpg">
+                                            <rect key="frame" x="367" y="141" width="64" height="64"/>
+                                            <state key="normal" image="icon_sms">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="company_orange" translatesAutoresizingMaskIntoConstraints="NO" id="YSk-GG-CRB">
+                                            <rect key="frame" x="35" y="227" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="DwJ-as-fww"/>
+                                                <constraint firstAttribute="width" constant="30" id="YSq-zL-4wk"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx高大上市公司" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkM-3g-q5K">
+                                            <rect key="frame" x="80" y="233" width="500" height="18"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default_marker" translatesAutoresizingMaskIntoConstraints="NO" id="wuw-UZ-S0h">
+                                            <rect key="frame" x="35" y="271" width="22" height="39"/>
+                                        </imageView>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.11477442460618004" green="0.16496115881302467" blue="0.26937342171717171" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
+                                        <constraint firstItem="Aur-Nq-X76" firstAttribute="top" secondItem="2Op-Kg-NBf" secondAttribute="bottom" constant="21" id="34v-xK-ixD"/>
+                                        <constraint firstItem="Vbx-fq-bV8" firstAttribute="centerY" secondItem="Aur-Nq-X76" secondAttribute="centerY" id="3Mu-DU-wU9"/>
+                                        <constraint firstItem="Aur-Nq-X76" firstAttribute="centerY" secondItem="knw-CQ-tpg" secondAttribute="centerY" id="518-ZJ-ifg"/>
+                                        <constraint firstItem="Aur-Nq-X76" firstAttribute="leading" secondItem="Vbx-fq-bV8" secondAttribute="trailing" constant="35" id="6LV-KK-vra"/>
                                         <constraint firstItem="xze-M0-htW" firstAttribute="leading" secondItem="2Op-Kg-NBf" secondAttribute="leading" id="90B-Tc-kzW"/>
+                                        <constraint firstItem="jkM-3g-q5K" firstAttribute="leading" secondItem="YSk-GG-CRB" secondAttribute="trailing" constant="15" id="B5c-QY-LDS"/>
                                         <constraint firstItem="xze-M0-htW" firstAttribute="bottom" secondItem="2Op-Kg-NBf" secondAttribute="bottom" id="FKD-Lj-zQt"/>
-                                        <constraint firstAttribute="centerX" secondItem="L4U-1X-BcK" secondAttribute="centerX" id="KcZ-sm-hao"/>
-                                        <constraint firstAttribute="bottom" secondItem="L4U-1X-BcK" secondAttribute="bottom" constant="17" id="Okz-8n-kKd"/>
+                                        <constraint firstItem="YSk-GG-CRB" firstAttribute="centerY" secondItem="jkM-3g-q5K" secondAttribute="centerY" constant="0.5" id="NKl-Gg-4K7"/>
+                                        <constraint firstAttribute="trailing" secondItem="jkM-3g-q5K" secondAttribute="trailing" constant="20" id="QOx-dk-PE7"/>
                                         <constraint firstItem="xze-M0-htW" firstAttribute="trailing" secondItem="2Op-Kg-NBf" secondAttribute="trailing" id="TbT-un-KzL"/>
+                                        <constraint firstItem="YSk-GG-CRB" firstAttribute="leading" secondItem="uhu-vO-xbP" secondAttribute="leading" constant="35" id="Ubq-o6-9xX"/>
+                                        <constraint firstItem="YSk-GG-CRB" firstAttribute="top" secondItem="uhu-vO-xbP" secondAttribute="top" constant="227" id="XZt-Uy-GvB"/>
                                         <constraint firstItem="2Op-Kg-NBf" firstAttribute="top" secondItem="uhu-vO-xbP" secondAttribute="top" constant="20" id="Ysf-d1-jEU"/>
                                         <constraint firstAttribute="centerX" secondItem="2Op-Kg-NBf" secondAttribute="centerX" id="g4Z-fd-vZB"/>
-                                        <constraint firstItem="L4U-1X-BcK" firstAttribute="top" secondItem="2Op-Kg-NBf" secondAttribute="bottom" constant="8" id="q7H-ez-HHN"/>
+                                        <constraint firstItem="Aur-Nq-X76" firstAttribute="centerX" secondItem="2Op-Kg-NBf" secondAttribute="centerX" id="pIO-yx-MVR"/>
                                         <constraint firstItem="xze-M0-htW" firstAttribute="top" secondItem="2Op-Kg-NBf" secondAttribute="top" id="v0c-oJ-HMh"/>
+                                        <constraint firstItem="knw-CQ-tpg" firstAttribute="leading" secondItem="Aur-Nq-X76" secondAttribute="trailing" constant="35" id="wwY-3O-7rC"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="btnAvatar" destination="2Op-Kg-NBf" id="usW-mU-BFM"/>
+                                    <outlet property="btnCall" destination="Aur-Nq-X76" id="cfy-3E-2iG"/>
+                                    <outlet property="btnEmail" destination="Vbx-fq-bV8" id="yzL-s6-azj"/>
+                                    <outlet property="btnSMS" destination="knw-CQ-tpg" id="gjk-gb-VEk"/>
                                     <outlet property="ivAvatar" destination="xze-M0-htW" id="MPn-6J-lcx"/>
-                                    <outlet property="lblName" destination="L4U-1X-BcK" id="qQH-pS-Ump"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -511,5 +550,10 @@
     </scenes>
     <resources>
         <image name="avatar_sample" width="200" height="200"/>
+        <image name="company_orange" width="30" height="30"/>
+        <image name="default_marker" width="21" height="38"/>
+        <image name="icon_call" width="64" height="64"/>
+        <image name="icon_email" width="64" height="64"/>
+        <image name="icon_sms" width="64" height="64"/>
     </resources>
 </document>
